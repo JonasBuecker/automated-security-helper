@@ -20,6 +20,6 @@ COPY utils /utils
 RUN echo $(ls)
 RUN echo $(ls /utils)
 
-CMD [ "sh", "-c", "ls" ]
+CMD [ "sh", "-c", "ls /utils -la" ]
 # CMD bash -C utils/git-docker-execute.sh
 
