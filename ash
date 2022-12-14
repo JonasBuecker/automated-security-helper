@@ -174,8 +174,6 @@ run_security_check() {
 
     docker build -t "${RUNTIME_CONTAINER_NAME}" -f "${DOCKERFILE_LOCATION}"/"${DOCKERFILE_TO_EXECUTE}" ${DOCKER_EXTRA_ARGS} "${SOURCE_DIR}" > /dev/null
     set +e # the scan will fail the command if it finds any finding. we don't want it to stop our script execution
-    docker container ls -a
-    docker cp utils docker.io/library/${RUNTIME_CONTAINER_NAME}:/app
     docker run --name "${RUNTIME_CONTAINER_NAME}" -v "${CFNRULES_LOCATION}":/cfnrules -v "${UTILS_LOCATION}":/utils -v "${SOURCE_DIR}":/app "${RUNTIME_CONTAINER_NAME}"
     #
     # capture the return code of the command invoked through docker
