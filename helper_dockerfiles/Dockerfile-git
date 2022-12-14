@@ -21,6 +21,6 @@ RUN echo $(ls)
 RUN echo $(ls /utils -la)
 
 #CMD [ "sh", "-c", "ls /utils -la" ]
-CMD [ "sh", "-c", "utils/git-docker-execute.sh"]
+CMD [ "sh", "-c", "./utils/git-docker-execute.sh"]
 # CMD bash -C utils/git-docker-execute.sh
 
