@@ -18,7 +18,7 @@ WORKDIR /app
 RUN mkdir utils
 COPY utils /utils
 RUN echo $(ls)
-RUN echo $(ls /utils)
+RUN echo $(ls /utils -la)
 
 #CMD [ "sh", "-c", "ls /utils -la" ]
 CMD [ "sh", "-c", "utils/git-docker-execute.sh"]
