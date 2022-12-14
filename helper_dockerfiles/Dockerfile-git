@@ -15,9 +15,10 @@ RUN git clone https://github.com/awslabs/git-secrets.git && \
     make install
 
 WORKDIR /app
-RUN mkdir app/utils
-COPY utils app/utils
-RUN echo $(ls /app)
+RUN mkdir utils
+COPY utils /utils
+RUN echo $(ls)
+RUN echo $(ls /utils)
 
 VOLUME /app
 
