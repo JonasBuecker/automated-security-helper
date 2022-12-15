@@ -22,6 +22,6 @@ RUN echo $(ls /utils -la)
 RUN chmod -R +x utils
 
 #CMD [ "sh", "-c", "ls /utils -la" ]
-RUN ./utils/git-docker-execute.sh
+RUN echo /utils/git-docker-execute.sh
 # CMD bash -C utils/git-docker-execute.sh
 
