@@ -15,14 +15,14 @@ RUN git clone https://github.com/awslabs/git-secrets.git && \
     make install
 
 WORKDIR /app
-RUN mkdir utils
-COPY utils /utils
+RUN mkdir ./utils
+COPY utils ./utils
 RUN echo $(ls)
-RUN echo $(ls /utils -la)
-RUN chmod +x /utils/git-docker-execute.sh
+RUN echo $(ls ./utils -la)
+RUN chmod +x ./utils/git-docker-execute.sh
 
 #CMD [ "sh", "-c", "ls /utils -la" ]
-RUN cat /utils/git-docker-execute.sh
+RUN cat ./utils/git-docker-execute.sh
 # CMD ["./utils/git-docker-execute.sh"]
-RUN bash -c "ls -la /; pwd; ls -la; cd utils; ls -la; cd /; cd app; ls -la; ./git-docker-execute.sh"
+RUN bash -c "ls -la /; ls -la ./app; pwd; ./utils/git-docker-execute.sh"
 
