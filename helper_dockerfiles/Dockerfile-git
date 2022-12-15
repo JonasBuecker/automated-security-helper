@@ -19,8 +19,9 @@ RUN mkdir utils
 COPY utils /utils
 RUN echo $(ls)
 RUN echo $(ls /utils -la)
+RUN chmod -R +x utils
 
 #CMD [ "sh", "-c", "ls /utils -la" ]
-CMD [ "sh", "-c", "./utils/git-docker-execute.sh"]
+RUN ./utils/git-docker-execute.sh
 # CMD bash -C utils/git-docker-execute.sh
 
