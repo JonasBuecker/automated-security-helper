@@ -6,6 +6,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir bandit nbconvert jupyterlab
 
 WORKDIR /app
-VOLUME /app
+RUN mkdir ./utils
+COPY utils ./utils
+RUN echo $(ls)
+RUN echo $(ls ./utils -la)
+RUN chmod +x ./utils/py-docker-execute.sh
 
-CMD bash -C /utils/py-docker-execute.sh
+RUN bash -c "./py-docker-execute.sh"

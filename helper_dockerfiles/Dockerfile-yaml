@@ -12,5 +12,10 @@ RUN apt-get update && \
 
 RUN pip3 install -U checkov && gem install cfn-nag
 WORKDIR /app
+RUN mkdir ./utils
+COPY utils ./utils
+RUN echo $(ls)
+RUN echo $(ls ./utils -la)
+RUN chmod +x ./utils/yaml-docker-execute.sh
 
-CMD bash -C /utils/yaml-docker-execute.sh
+RUN bash -c "./yaml-docker-execute.sh"

@@ -21,8 +21,5 @@ RUN echo $(ls)
 RUN echo $(ls ./utils -la)
 RUN chmod +x ./utils/git-docker-execute.sh
 
-#CMD [ "sh", "-c", "ls /utils -la" ]
-RUN cat ./utils/git-docker-execute.sh
-# CMD ["./utils/git-docker-execute.sh"]
-RUN bash -c "ls -la /; ls -la ./app; pwd; ./utils/git-docker-execute.sh"
+RUN bash -c "./utils/git-docker-execute.sh"
 

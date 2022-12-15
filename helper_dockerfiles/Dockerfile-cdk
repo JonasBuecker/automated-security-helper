@@ -15,4 +15,10 @@ RUN python3 -m pip install -U aws-cdk-lib cdk-nag jinja2
 
 WORKDIR /app
 
-CMD bash -C /utils/cdk-docker-execute.sh
+RUN mkdir ./utils
+COPY utils ./utils
+RUN echo $(ls)
+RUN echo $(ls ./utils -la)
+RUN chmod +x ./utils/cdk-docker-execute.sh
+
+RUN bash -c "./utils/cdk-docker-execute.sh"

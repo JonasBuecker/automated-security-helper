@@ -6,6 +6,10 @@ RUN curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | 
     curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 
 WORKDIR /app
-VOLUME /app
+RUN mkdir ./utils
+COPY utils ./utils
+RUN echo $(ls)
+RUN echo $(ls ./utils -la)
+RUN chmod +x ./utils/grype-docker-execute.sh
 
-CMD bash -C /utils/grype-docker-execute.sh
+RUN bash -c "./grype-docker-execute.sh"
