@@ -8,4 +8,4 @@ RUN echo $(ls)
 RUN echo $(ls ./utils -la)
 RUN chmod +x ./utils/js-docker-execute.sh
 
-RUN bash -c "./js-docker-execute.sh"
+RUN bash -c "./utils/js-docker-execute.sh"

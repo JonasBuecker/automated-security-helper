@@ -18,4 +18,4 @@ RUN echo $(ls)
 RUN echo $(ls ./utils -la)
 RUN chmod +x ./utils/yaml-docker-execute.sh
 
-RUN bash -c "./yaml-docker-execute.sh"
+RUN bash -c "./utils/yaml-docker-execute.sh"
