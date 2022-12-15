@@ -22,6 +22,7 @@ RUN echo $(ls /utils -la)
 RUN chmod -R +x utils
 
 #CMD [ "sh", "-c", "ls /utils -la" ]
-RUN cat /utils/git-docker-execute.sh
+# RUN cat /utils/git-docker-execute.sh
+ENTRYPOINT ["/utils/git-docker-execute.sh"]
 # CMD bash -C utils/git-docker-execute.sh
 
