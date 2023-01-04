@@ -11,5 +11,9 @@ COPY utils ./utils
 RUN echo $(ls)
 RUN echo $(ls ./utils -la)
 RUN chmod +x ./utils/py-docker-execute.sh
+RUN cd ..
+RUN echo $(ls)
+RUN cd ..
+RUN echo $(ls)
 
 RUN bash -c "./utils/py-docker-execute.sh"
