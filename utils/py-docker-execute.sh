@@ -25,6 +25,8 @@ RC=0
 # Convert any Jupyter notebook files to python
 #./utils/identifyipynb.sh
 
+
+pwd
 bandit -ll -r  ./builds/D9/measurement-data/data_management_backend # > py_report_result.txt 2>&1
 BRC=$?
 RC=$(bumprc $RC $BRC)
