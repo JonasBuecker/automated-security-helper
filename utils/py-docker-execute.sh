@@ -25,7 +25,7 @@ RC=0
 # Convert any Jupyter notebook files to python
 #./utils/identifyipynb.sh
 
-bandit -v -d -ll -r # . > py_report_result.txt 2>&1
+bandit -v -d -ll -r  . # > py_report_result.txt 2>&1
 BRC=$?
 RC=$(bumprc $RC $BRC)
 
